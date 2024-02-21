@@ -10,5 +10,36 @@
     <h1>Hello world!</h1>
     <p>This was updated from GitHub automatically by Shai 18.2.2024 </p>
     <script src="index.js"></script>
+      
+    <div id="clock"></div>
+
+    <script>
+        function updateTime() {
+            // Get the current time
+            var currentTime = new Date();
+
+            // Extract hours, minutes, and seconds
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var seconds = currentTime.getSeconds();
+
+            // Add leading zeros if needed
+            hours = (hours < 10 ? "0" : "") + hours;
+            minutes = (minutes < 10 ? "0" : "") + minutes;
+            seconds = (seconds < 10 ? "0" : "") + seconds;
+
+            // Construct the string in HH:MM:SS format
+            var timeString = hours + ":" + minutes + ":" + seconds;
+
+            // Update the content of the div with id="clock"
+            document.getElementById('clock').innerHTML = timeString;
+        }
+
+        // Call updateTime every second to update the time
+        setInterval(updateTime, 1000);
+
+        // Call updateTime once initially to prevent initial delay
+        updateTime();
+    </script>
 </body>
 </html>
