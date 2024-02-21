@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <title>GitHub Shai pages demo</title>
+    <script>
+        // Function to increment the visit count
+        function incrementCounter() {
+            if (localStorage.pageVisits) {
+                localStorage.pageVisits = Number(localStorage.pageVisits) + 1;
+            } else {
+                localStorage.pageVisits = 1;
+            }
+            document.getElementById('visitCount').textContent = localStorage.pageVisits;
+        }
 
+        // Execute the incrementCounter function when the page loads
+        window.onload = function() {
+            incrementCounter();
+        };
+    </script>
 </head>
 <body>
     <h1>Hello world!</h1>
@@ -15,6 +30,13 @@
     <div id="clock">
     </div>
 
+ <p>This page has been visited <span id="visitCount">0</span> times.</p>
+
+    <!-- Call the incrementCounter function when the page is loaded -->
+    <script>
+        incrementCounter();
+    </script>
+    
     <script>
         function updateTime() {
             // Get the current time
