@@ -5,3 +5,12 @@ text-align: center;
 }
 p {text-align: center;}
 div {text-align: center;}
+        clock {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+    
